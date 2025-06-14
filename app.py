@@ -15,7 +15,6 @@ load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 OPENAI_API_KEY = os.getenv("API_KEY")
-print(OPENAI_API_KEY)
 genai.configure(api_key=GOOGLE_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -34,7 +33,7 @@ def describe_image(image_base64: str):
 
 client = OpenAI(api_key=OPENAI_API_KEY, base_url="https://aipipe.org/openai/v1")
 embed_model = "text-embedding-3-small"
-llm_model = "gpt-4o-mini"  # or "gpt-3.5-turbo"
+llm_model = "gpt-3.5-turbo"
 
 # ---- Load Embeddings/Chunks ----
 data = np.load("chunks_embeddings.npz", allow_pickle=True)
